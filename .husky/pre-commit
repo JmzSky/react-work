@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "代码规范检测中..."
+npx tsc  
+echo "代码规范检测完成"
+npx --no-install lint-staged --quiet

@@ -1,0 +1,64 @@
+{
+  "name": "react-work",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Jmzyzr",
+  "scripts": {
+    "build": "max build",
+    "commit": "npx cz",
+    "dev": "max dev",
+    "postinstall": "npm run setup",
+    "lint": "max lint --fix",
+    "prepare": "husky install",
+    "preview": "max preview",
+    "setup": "max setup",
+    "start": "npm run dev"
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --cache --write"
+    ],
+    "*.{js,jsx}": [
+      "max lint --fix --eslint-only",
+      "prettier --cache --write"
+    ],
+    "*.{css,less}": [
+      "max lint --fix --stylelint-only",
+      "prettier --cache --write"
+    ],
+    "*.png": [
+      "png-minify minify"
+    ],
+    "*.ts?(x)": [
+      "max lint --fix --eslint-only",
+      "prettier --cache --parser=typescript --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "@ant-design/pro-components": "^2.6.4",
+    "@umijs/max": "^4.0.72",
+    "antd": "^5.7.0",
+    "jwt-decode": "^3.1.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "png-minify": "^0.0.1",
+    "prettier": "^3.0.0",
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "prettier-plugin-packagejson": "^2.4.5",
+    "typescript": "^5.1.6"
+  }
+}

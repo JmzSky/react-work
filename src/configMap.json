@@ -1,0 +1,3 @@
+{
+  "LOGIN_IN": "https://passport{env}{domain}/#/login?redirect_uri={redirect_uri}"
+}
